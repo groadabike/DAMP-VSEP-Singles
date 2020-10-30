@@ -43,7 +43,7 @@ def main(args):
         if meta:
             metadata.append(meta)
     tracks = {p: m for p, m in metadata}
-    metadata_path.parent.mkdir(parents=True, exist_ok=True)
+    metadata_path.mkdir(parents=True, exist_ok=True)
     json.dump(tracks, open(metadata_path / f"{args.split}_sr{args.sample_rate}.json",
                            'w'),
               indent=2)
